@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_timesheet_root" name="Parte de horas" web_icon="mm_timesheet,static/description/icon.png" sequence="10"/>
+
+    <menuitem id="menu_timesheet_time" name="Registros de horas"
+        parent="menu_timesheet_root" action="action_timesheet_time" sequence="10"/>
+
+</odoo>
