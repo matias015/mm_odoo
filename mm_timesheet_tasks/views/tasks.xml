@@ -11,6 +11,11 @@
                     <field name="mm_timesheet_time_ids"/>
                 </page>
             </xpath>
+
+            <field name="user_ids" position="after">
+                <field name="mm_estimated_time" widget="float_time"/>
+                <field name="mm_real_time" widget="float_time"/>
+            </field>
         </field>
     </record>
 
