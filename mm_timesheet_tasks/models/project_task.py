@@ -10,7 +10,7 @@ class ProjectTask(models.Model):
         string="Registro de horas"
     )
 
-    mm_estimated_time = fields.Float(string="Tiempo estimado (en horas)", required=False)
+    mm_estimated_time = fields.Float(string="Tiempo estimado (en horas)", required=False, copy=False)
     mm_real_time = fields.Float(string="Tiempo consumido (en horas)", compute='_compute_real_time')
 
     @api.depends('mm_timesheet_time_ids', 'mm_timesheet_time_ids.time')
@@ -26,5 +26,16 @@ class ProjectTask(models.Model):
             real_time += timesheet.time
         
         self.mm_real_time = real_time
+    
+    def write(self, values):
+        result = super().write(values)
+        if values.get('mm_estimated_time', False):
+            self.project_id._update_project_estimated_time()
+        return result
 
     
+    def unlink(self):
+        proyecto = self.project_id
+        result = super().unlink()
+        proyecto._update_project_estimated_time()
+        return result

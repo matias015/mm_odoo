@@ -20,4 +20,18 @@
     </record>
 
 
+    <record id="view_task_kanban_mm_timesheet" model="ir.ui.view">
+        <field name="name">project.task.kanban.mm.timesheet</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <field name="priority" position="after">
+                <div class="px-2">
+                    <field name="mm_estimated_time" widget="float_time" invisible="not mm_estimated_time"/> 
+                </div>
+            </field>
+        </field>
+    </record>
+
+
 </odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_project_mm_timesheet" model="ir.ui.view">
+        <field name="name">project.project.list.mm.timesheet</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+        
+            <field name="user_id" position="after" optional="1">
+                <field name="mm_total_estimated_time" widget="float_time"/>
+            </field>
+
+        </field>
+    </record>
+
+
+    <record id="view_project_kanban_mm_timesheet" model="ir.ui.view">
+        <field name="name">project.project.kanban.mm.timesheet</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+        
+            <field name="activity_ids" position="after">
+                <span class="px-2">
+                    <field name="mm_total_estimated_time" widget="float_time" invisible="not mm_total_estimated_time"/>
+                </span>
+            </field>
+
+        </field>
+    </record>
+
+
+</odoo>
