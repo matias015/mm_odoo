@@ -1,6 +1,6 @@
 {
     'name': "MM Timesheet tasks",
-    'version': '19.0.1.2.0',
+    'version': '19.0.1.3.0',
     'category': 'Human Resources',
     'summary': "Registro de horas trabajadas por empleado en tareas",
     'description': """ """,
@@ -9,6 +9,7 @@
     'data': [
         'views/tasks.xml',
         'views/projects.xml',
+        'views/time.xml',
     ],
     'license': 'LGPL-3',
     'installable': True,

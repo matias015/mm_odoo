@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_timesheet_time_list_tasks" model="ir.ui.view">
+        <field name="name">timesheet.time.list.mm.tasks</field>
+        <field name="model">timesheet.time</field>
+        <field name="inherit_id" ref="mm_timesheet.view_timesheet_time_list"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="task_id"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>
