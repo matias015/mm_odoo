@@ -9,11 +9,11 @@
             <xpath expr="//notebook" position="inside">
                 <page name="mm_timesheet" string="Horas">
                     <field name="mm_timesheet_time_ids">
-                        <list>
+                        <list editable="bottom">
                             <field name="date"/>
                             <field name="employee_id"/>
                             <field name="name"/>
-                            <field name="time"/>
+                            <field name="time" widget="float_time"/>
                         </list>
                     </field>
                 </page>
